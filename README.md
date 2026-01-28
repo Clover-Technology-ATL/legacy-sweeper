@@ -69,8 +69,12 @@ npm run dev
 If you want to create a portable `.exe` that runs without Node.js:
 
 ```bash
+# From the project root directory (legacy-sweeper/)
+npm install    # Required first if you haven't already
 npm run package
 ```
+
+You do **not** need to run `npm run dev` before packaging.
 
 The executable will be created at `release/win-unpacked/Legacy Sweeper.exe`.
 
