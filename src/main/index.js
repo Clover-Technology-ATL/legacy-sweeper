@@ -4,7 +4,12 @@ const fs = require('fs')
 const { exec } = require('child_process')
 const { promisify } = require('util')
 const Anthropic = require('@anthropic-ai/sdk')
-require('dotenv').config({ path: path.join(__dirname, '../../.env') })
+
+// Load .env from correct location (dev vs packaged)
+const envPath = app.isPackaged
+  ? path.join(path.dirname(process.execPath), '.env')
+  : path.join(__dirname, '../../.env')
+require('dotenv').config({ path: envPath })
 
 const execAsync = promisify(exec)
 
