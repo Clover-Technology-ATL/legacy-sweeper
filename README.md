@@ -65,7 +65,12 @@ npm run dev
 
 # Build for production
 npm run build
+
+# Package as Windows executable
+npm run package
 ```
+
+After packaging, the executable will be at `release/win-unpacked/Legacy Sweeper.exe`. Copy your `.env` file to that folder if you want AI audit features.
 
 ## AI Process Audit Setup (Optional)
 
