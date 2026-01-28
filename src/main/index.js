@@ -580,6 +580,7 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     frame: false,
+    title: 'Legacy Sweeper',
     backgroundColor: '#0f0f14',
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),

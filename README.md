@@ -11,8 +11,8 @@ A modern Windows desktop app for visualizing and managing installed programs. Th
 ### Dashboard
 - Overview metrics: total programs, disk usage, largest program, old programs count
 - Top 10 largest programs bar chart with interactive tooltips
-- Size by category donut chart (Microsoft, Development, Gaming, Creative, Communication, Utilities)
-- Programs by category breakdown
+- Size by category donut chart (Gaming, Development, Creative, Browsers, Communication, Media, Security, Productivity, System, Drivers)
+- Clickable category breakdown - click any category to view all programs inside
 
 ### Programs
 - Searchable, sortable table of all installed programs
@@ -79,6 +79,20 @@ You do **not** need to run `npm run dev` before packaging.
 The executable will be created at `release/win-unpacked/Legacy Sweeper.exe`.
 
 **Note:** Copy your `.env` file to the `release/win-unpacked/` folder if you want AI audit features in the packaged app.
+
+### Creating a Desktop Shortcut
+
+After packaging, you can create a desktop shortcut by running this PowerShell command:
+
+```powershell
+$WshShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\Legacy Sweeper.lnk")
+$Shortcut.TargetPath = "FULL_PATH_TO\release\win-unpacked\Legacy Sweeper.exe"
+$Shortcut.WorkingDirectory = "FULL_PATH_TO\release\win-unpacked"
+$Shortcut.Save()
+```
+
+Replace `FULL_PATH_TO` with the actual path to your legacy-sweeper folder.
 
 ## AI Process Audit Setup (Optional)
 
