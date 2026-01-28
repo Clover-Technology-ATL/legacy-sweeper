@@ -60,17 +60,21 @@ cd legacy-sweeper
 # Install dependencies
 npm install
 
-# Start development server
+# Run the app
 npm run dev
+```
 
-# Build for production
-npm run build
+## Building a Standalone Executable (Optional)
 
-# Package as Windows executable
+If you want to create a portable `.exe` that runs without Node.js:
+
+```bash
 npm run package
 ```
 
-After packaging, the executable will be at `release/win-unpacked/Legacy Sweeper.exe`. Copy your `.env` file to that folder if you want AI audit features.
+The executable will be created at `release/win-unpacked/Legacy Sweeper.exe`.
+
+**Note:** Copy your `.env` file to the `release/win-unpacked/` folder if you want AI audit features in the packaged app.
 
 ## AI Process Audit Setup (Optional)
 
